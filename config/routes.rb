@@ -1,4 +1,30 @@
 Rails.application.routes.draw do
+
+  root 'en_words#index'
+  get 'en_words/word_h1'
+  get 'en_words/word_h2'
+  get 'en_words/word_h3'
+  get 'en_words/word_j1'
+  get 'en_words/word_j2'
+  get 'en_words/word_j3'
+  
+
+  namespace :api, { format: 'json' } do
+    namespace :v1, { format: 'json' } do 
+      get 'en_words/h1'
+      get 'en_words/h2'
+      get 'en_words/h3'
+      get 'en_words/j1'
+      get 'en_words/j2'
+      get 'en_words/j3'
+      post 'en_words/search'
+      post 'en_words/detail'
+      resources :en_words
+    end
+  end
+  
+  resources :en_words
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

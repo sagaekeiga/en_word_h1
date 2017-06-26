@@ -1,0 +1,27 @@
+<table class="ui celled table">
+  <thead>
+    <tr>
+    <th>ID</th>
+    <th>名前</th>
+    <th>意味</th>
+    <th>番号</th>
+    <th>がくねん</th>
+    <th>管理</th>
+    </tr>
+ </thead>
+  <tbody>
+    <% en_words.each do |en_word| %>
+        <tr>
+         <td ><%= en_word.id %></td>
+         <td><%= link_to"#{en_word.name}", en_word, { :target => "_blank"}  %></td>
+         <td ><%= en_word.meaning %></td>
+         <td ><%= en_word.number %></td>
+         <td ><%= en_word.grade %></td>
+         <td>
+          <%= link_to "編集", edit_en_word_path(en_word.id), { :class => "ui olive button" } %>
+          <%= link_to "削除", en_word, { :class => "ui red button", method: :delete, data: { confirm: "本当に削除してもいいですか？" }} %>
+         </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

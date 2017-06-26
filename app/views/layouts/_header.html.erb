@@ -1,0 +1,19 @@
+<div class="ui segment">
+  <h3 class="ui right aligned header">
+    <%= link_to "新規登録", new_en_word_path %>
+  </h3>
+  <h3 class="ui center aligned header">
+      <div class="ui action input">
+        <%= search_form_for @q do |f| %>
+        
+          <%= f.search_field :name_cont, :placeholder => "名前" %>
+          <%= f.search_field :meaning_cont, :placeholder => "意味" %>
+          <%= f.search_field :number_cont, :placeholder => "番号" %><br/>
+          <%= f.search_field :grade_cont, :placeholder => "学年" %>
+
+          <%# 検索ボタン %>
+          <%= f.submit :class => "ui button"%>
+        <% end %>
+      </div>
+  </h3>
+</div>

@@ -1,0 +1,7 @@
+
+
+<div class="ui grid">
+      <%= render 'en_words/index', en_words: @en_words if @results.nil? %>
+      <%= render 'en_words/index', en_words: @results if !@results.nil? %>
+  </div>
+</div>
